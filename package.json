@@ -1,0 +1,17 @@
+{
+  "name": "node-table-menu",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "author": "Alexandre Blause <contact@ablause.dev> (https://ablause.dev/)",
+  "license": "MIT",
+  "workspaces": [
+    "./client",
+    "./server"
+  ],
+  "devDependencies": {
+    "ts-node-dev": "^1.1.6",
+    "ts-standard": "^10.0.0",
+    "typescript": "^4.2.4"
+  }
+}
