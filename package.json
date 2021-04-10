@@ -5,6 +5,10 @@
   "private": true,
   "author": "Alexandre Blause <contact@ablause.dev> (https://ablause.dev/)",
   "license": "MIT",
+  "scripts": {
+    "start": "node ./server",
+    "build": "yarn workspace server build && yarn workspace client build"
+  },
   "workspaces": [
     "./client",
     "./server"
