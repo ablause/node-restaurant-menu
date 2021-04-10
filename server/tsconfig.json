@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "module": "commonjs",
+    "module": "CommonJS",
     "lib": ["es2017"],
-    "outDir": "dist",
+    "outDir": "build",
+    "composite": true,
     "rootDir": "src",
     "noImplicitAny": true,
     "strictNullChecks": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-  },
-  "references": [{ "path": "../client" }]
+  }
 }
