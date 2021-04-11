@@ -2,5 +2,9 @@
   "standard.enable": true,
   "standard.engine": "ts-standard",
   "standard.autoFixOnSave": true,
-  "standard.workingDirectories": ["./server", "./clientd"]
+  "standard.workingDirectories": [
+    "./server",
+    "./clientd"
+  ],
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }
