@@ -1,28 +1,20 @@
 import * as Koa from 'koa'
 import * as path from 'path'
 import * as serve from 'koa-static'
-import * as helmet from 'koa-helmet'
-import * as logger from 'koa-logger'
-import * as cors from '@koa/cors'
-import * as bodyParser from 'koa-bodyparser'
 import { StatusCodes } from 'http-status-codes'
 
-import router from './routes'
+import { ICustomAppState, ICustomAppContext } from './interfaces'
 
-const app: Koa = new Koa()
+import router from './routes/router'
+import baseMiddlewares from './middlewares/baseMiddlewares'
+
+const app: Koa = new Koa<ICustomAppState, ICustomAppContext>()
 const publicPath: string = path.resolve(__dirname, '../../client/build')
 
 // Middleware
-app.use(helmet())
-app.use(bodyParser())
-app.use(logger())
-app.use(cors())
+baseMiddlewares(app)
 
 app.use(serve(publicPath))
-
-// Routes
-app.use(router.routes())
-  .use(router.allowedMethods())
 
 app.use(async (ctx: Koa.Context, next: () => Promise<any>) => {
   try {
@@ -36,5 +28,9 @@ app.use(async (ctx: Koa.Context, next: () => Promise<any>) => {
 })
 
 app.on('error', console.error)
+
+// Routes
+app.use(router.routes())
+  .use(router.allowedMethods())
 
 export default app

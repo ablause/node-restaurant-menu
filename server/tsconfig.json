@@ -6,14 +6,17 @@
     "outDir": "build",
     "composite": true,
     "rootDir": "src",
+    "baseUrl": ".",
     "noImplicitAny": true,
     "strictNullChecks": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "paths": {
       "@/middlewares/*": ["./src/middlewares/*"],
-      "@/utilities": ["./src/utilities/*"],
-      "@/models": ["./src/models/*"]
+      "@/interfaces/*": ["./src/interfaces/*"],
+      "@/utilities/*": ["./src/utilities/*"],
+      "@/services/*": ["./src/services/*"],
+      "@/models/*": ["./src/models/*"]
     }
   }
 }
